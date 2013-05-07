@@ -16,18 +16,19 @@ It is a command line tool that uses the private MobileDevice API to install an i
 * Xcode must be installed, along with the SDK for your iOS version.
 
 ## Installation
-* Clone git repository anywhere on your Mac `git clone https://github.com/tborys/fruitstrap/`
-* Open terminal and navigate to the fruitstrap directory and execute the following commands:
 
-`> make fruitstrap`
+* Open terminal and browse to a location where you would like to clone git repository on your Mac and type following: `git clone https://github.com/tborys/fruitstrap/`
+* Navigate to the fruitstrap directory and execute the following commands:
 
-`> sudo cp fruitstrap /usr/bin/`
+`> make fruitstrap` - this will create fruitstrap file which deploys your app
 
-* Open new terminal and execute the following command
+`> sudo cp fruitstrap /usr/bin/` - this copies created fruitstrap file into your PATH directory, it provides an access to fruitstrap application from any location
+
+* Execute the following command
 
 `> fruitstrap`
 
-* This should return:
+* If everything went as expected, terminal output should return:
 
 `> usage: fruitstrap [-d/--debug] [-i/--id device_id] -b/--bundle bundle.app [-a/--args arguments] [-t/--timeout timeout seconds)]` 
 
