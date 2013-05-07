@@ -1,7 +1,10 @@
-## This project is no longer maintained.
+## This project is an updated version of original fruitstrap version.
 
 fruitstrap
 ==========
+Original version exists in https://github.com/ghughes/fruitstrap. This fork contains changes in fruitstrap.c file. Mainly
+these are just path modifications, so it should work with the latest version of xcode (4.6.2 tested).
+
 Install and debug iPhone apps without using Xcode. Designed to work on unjailbroken devices.
 
 ## Requirements
