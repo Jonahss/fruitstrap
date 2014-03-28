@@ -484,14 +484,14 @@ void handle_device(AMDeviceRef device) {
 
     PRINT ("found device id\n");
     if (device_id != NULL) {
-        if(strcmp(device_id, CFStringGetCStringPtr(found_device_id, CFStringGetSystemEncoding())) == 0) {
+        if(strcmp(device_id, CFStringGetCStringPtr(found_device_id, CFStringGetFastestEncoding(found_device_id))) == 0) {
             found_device = true;
         } else {
             return;
         }
     } else {
         if (operation == OP_LIST_DEVICES) {
-            printf ("%s\n", CFStringGetCStringPtr(found_device_id, CFStringGetSystemEncoding()));
+            printf ("%s\n", CFStringGetCStringPtr(found_device_id, CFStringGetFastestEncoding(found_device_id)));
             CFRetain(device); // don't know if this is necessary?
             return;
         }
@@ -500,13 +500,13 @@ void handle_device(AMDeviceRef device) {
 
     CFRetain(device); // don't know if this is necessary?
 	if (operation == OP_INSTALL) {
-    	PRINT("[  0%%] Found device (%s), beginning install\n", CFStringGetCStringPtr(found_device_id, CFStringGetSystemEncoding()));
+    	PRINT("[  0%%] Found device (%s), beginning install\n", CFStringGetCStringPtr(found_device_id, CFStringGetFastestEncoding(found_device_id)));
     }
     else if (operation == OP_UNINSTALL) {
-        PRINT("[  0%%] Found device (%s), beginning uninstall\n", CFStringGetCStringPtr(found_device_id, CFStringGetSystemEncoding()));
+        PRINT("[  0%%] Found device (%s), beginning uninstall\n", CFStringGetCStringPtr(found_device_id, CFStringGetFastestEncoding(found_device_id)));
 	}
     else if (operation == OP_ISINSTALLED) {
-        PRINT("[  0%%] Found device (%s), beginning check\n", CFStringGetCStringPtr(found_device_id, CFStringGetSystemEncoding()));
+        PRINT("[  0%%] Found device (%s), beginning check\n", CFStringGetCStringPtr(found_device_id, CFStringGetFastestEncoding(found_device_id)));
 	}
     AMDeviceConnect(device);
 	assert(AMDeviceIsPaired(device));
@@ -557,7 +557,7 @@ void handle_device(AMDeviceRef device) {
         }
     } else if (operation == OP_UNINSTALL) {
         
-        //PRINT("Parameter: %s", CFStringGetCStringPtr(path, CFStringGetSystemEncoding()));
+        //PRINT("Parameter: %s", CFStringGetCStringPtr(path, CFStringGetFastestEncoding(found_device_id)));
 
         mach_error_t result = AMDeviceUninstallApplication (installFd, path, NULL, operation_callback, NULL);
         if (result != 0)
