@@ -1,0 +1,23 @@
+{
+  "name": "fruitstrap",
+  "version": "1.0.0",
+  "description": "C library for installing and debugging iPhone apps from the command line, without using Xcode",
+  "main": "fruitstrap",
+  "scripts": {
+    "install": "make fruitstrap"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Jonahss/fruitstrap.git"
+  },
+  "keywords": [
+    "appium",
+    "ios"
+  ],
+  "author": "https://github.com/ghughes",
+  "license": "gpl-3.0",
+  "bugs": {
+    "url": "https://github.com/Jonahss/fruitstrap/issues"
+  },
+  "homepage": "https://github.com/Jonahss/fruitstrap"
+}
